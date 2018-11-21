@@ -18,9 +18,13 @@ class School
   end
 
   def sort
-    new_roster = {}
-    @roster.each {|grade, students| new_roster[grade] = students.sort}
-    new_roster
+    # non-destructive
+    # new_roster = {}
+    # @roster.each {|grade, students| new_roster[grade] = students.sort}
+    # new_roster
+
+    # destructive
+    @roster.each {|grade, students| students.sort!}
   end
 
 end
